@@ -95,7 +95,7 @@ def featureExtraction(img, PLOT = False):
     return fv, fNames
 
 def getFeaturesFromFile(fileName, PLOT = False):
-    img = cv2.imread(fileName, cv2.CV_LOAD_IMAGE_COLOR)    # read image
+    img = cv2.imread(fileName, cv2.IMREAD_COLOR)    # read image
     #img2 = resizeFrame(img, 128)# resize
 
     #img2[:,:,0] = img2[:,:,0] + 3.5 * img2.std() * np.random.random([img2.shape[0], img2.shape[1]])
@@ -164,7 +164,7 @@ def visualizeFeatures(Features, Files, Names):
     plt.subplot(2,1,1);
     ax = plt.gca()
     for i in range(len(Files)):
-        im = cv2.imread(Files[i], cv2.CV_LOAD_IMAGE_COLOR)    
+        im = cv2.imread(Files[i], cv2.IMREAD_COLOR)    
         Width = 0.2;  Height = 0.2; startX = y_eig[i][0]; startY = y_eig[i][1];
         print startX, startY
         myaximage = ax.imshow(cv2.cvtColor(im, cv2.cv.CV_RGB2BGR), extent=(startX-Width/2.0, startX+Width/2.0, startY-Height/2.0, startY+Height/2.0), alpha=1.0, zorder=-1)
