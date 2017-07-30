@@ -41,7 +41,7 @@ def getRGBS(img, PLOT = False):
 
 
 	features.extend(featuresSobel)
-	Grayscale = cv2.cvtColor(img, cv2.cv.CV_BGR2GRAY)
+	Grayscale = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	histG = cv2.calcHist([chan], [0], None, [8], [0, 256])
 	histG = histG / histG.sum()
 	features.extend(histG[:,0].tolist())
